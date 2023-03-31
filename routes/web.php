@@ -4,6 +4,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\SoftDeleteController;
 
 
 /*
@@ -22,3 +23,5 @@ Route::get('/', function () {
 });
 
 Route::resource('posts', PostController::class);
+Route::get('showDeleted',[SoftDeleteController::class,'showdeleted']);
+Route::get('restore/{id}',[SoftDeleteController::class,'restore'])->name('posts.restore');
