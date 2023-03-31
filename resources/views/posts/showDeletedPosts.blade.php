@@ -16,10 +16,10 @@
           <td> {{$post->title}} </td>
           <td> {{$post->body}} </td>
           <td><a href="{{route('posts.restore',$post->id)}}">Restore</a></td>
-          <td><form action="{{route('posts.destroy',$post->id)}}" method="post">
+          <td><form action="{{route('posts.forceDelete',$post->id)}}" method="get">
             @csrf
-            @method('delete')
-            <button type="submit">delete</button>
+            {{-- @method('delete') --}}
+            <button type="submit">permanentDelete</button>
          </form></td>
         </tr>
         @endforeach

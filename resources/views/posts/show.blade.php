@@ -19,7 +19,7 @@
           <td><form action="{{route('posts.destroy',$post->id)}}" method="post">
             @csrf
             @method('delete')
-            <button type="submit">delete</button>
+            <button type="submit">softDelete</button>
          </form></td>
         </tr>
         @endforeach

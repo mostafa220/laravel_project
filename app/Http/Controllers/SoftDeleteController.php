@@ -19,4 +19,11 @@ class SoftDeleteController extends Controller
         // return view('posts.showDeletedPosts',compact('posts'));
 
     }
+
+    public function forceDelete($id){
+        $post = Post::withTrashed()->where('id',$id)->forceDelete();
+        return redirect()->back();
+        // return view('posts.showDeletedPosts',compact('posts'));
+
+    }
 }

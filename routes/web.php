@@ -25,3 +25,4 @@ Route::get('/', function () {
 Route::resource('posts', PostController::class);
 Route::get('showDeleted',[SoftDeleteController::class,'showdeleted']);
 Route::get('restore/{id}',[SoftDeleteController::class,'restore'])->name('posts.restore');
+Route::get('forceDelete/{id}',[SoftDeleteController::class,'forceDelete'])->name('posts.forceDelete');
